@@ -1,0 +1,28 @@
+★VBA
+ファイル削除
+Dim buf As String
+buf = Dir(SaveDir & "\" & "*.log")
+Kill(SaveDir & "\" & "*.log")
+
+★logfie場所
+C:\autocad_file\logfile
+
+★visualstudioコード
+AppActivate("Autodesk AutoCAD")
+SendKeys.Send("_QAFLAGS{Enter}6{Enter}")
+SendKeys.Send("_logfileon{Enter}")
+SendKeys.Send("-layer{Enter}?{Enter}*{Enter}{Enter}")
+SendKeys.Send("_logfileoff{Enter}")
+SendKeys.Send("_QAFLAGS{Enter}0{Enter}")
+
+★Autocadコマンド
+_QAFLAGS
+6
+_logfileon
+-layer
+?
+*
+
+_logfileoff
+_QAFLAGS
+0

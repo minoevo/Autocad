@@ -1,0 +1,68 @@
+◆マクロ挿入方法
+ツールタブ→カスタマイズ→インタフェース
+→新しいコマンド作成→マクロ部分に転記(イメージはお好みで)
+
+
+★片・節・層・断
+アイコン説明
+走向傾斜を描画します。
+(縮尺は 1 → 1mmとする。)
+
+操作
+・画層選択後
+①描画位置決定(マウス又は座標)
+②入力値：走向角度
+          EorW   (E:EAST  W:WEST)  小文字でも可
+          傾斜角度
+          NorS   (N:North[マーク上側] S:South[マーク下側]) 小文字でも可
+③走向角度文字移動
+④傾斜角度文字移動
+
+  走向傾斜 描画(文字サイズ：1700)
+	片：片理面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-3500,0;@7000,0;;_rotate;l;;@-3500,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@-725,0;@725,1050;@725,-1050;@-1450,0;c;_rotate;l;;@725,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;1700;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;1700;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+	節：節理面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-3500,0;@7000,0;;_rotate;l;;@-3500,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@-725,0;@0,1050;@1450,0;@0,-1050;@-1450,0;c;_rotate;l;;@725,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;1700;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;1700;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+	層：層理面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-3500,0;@7000,0;;_rotate;l;;@-3500,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@0,0;@0,1050;;_rotate;l;;@0,-1050;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;1700;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;1700;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+	断：断層面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-3500,0;@7000,0;;_rotate;l;;@-3500,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@0,0;@0,1750;;_rotate;l;;@0,-1750;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@-270,1010;@270,740;@270,-740;;_rotate;l;;@-270,-1010;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;1700;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;1700;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+
+  走向傾斜 描画(文字サイズ：3000)
+	片：片理面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-6250,0;@12500,0;;_rotate;l;;@-6250,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@-1800,0;@1800,2700;@1800,-2700;@-3600,0;c;_rotate;l;;@1800,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;3000;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;3000;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+	節：節理面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-6250,0;@12500,0;;_rotate;l;;@-6250,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@-1100,0;@0,1600;@2200,0;@0,-1600;@-2200,0;c;_rotate;l;;@800,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;3000;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;3000;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+	層：層理面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-6250,0;@12500,0;;_rotate;l;;@-6250,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@0,0;@0,2000;;_rotate;l;;@0,-2000;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;3000;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;3000;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+	断：断層面
+^C^C_id;\_setenv;走向;\_setenv;EorW;\_setenv;NorS;\_setenv;傾斜;\_zoom;w;@-20,-20;@40,40;_line;@-6250,0;@12500,0;;_rotate;l;;@-6250,0;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@0,0;@0,2000;;_rotate;l;;@0,-2000;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));^C^C_pline;@-480,1155;@480,845;@480,-845;;_rotate;l;;@-480,-1155;$M=$(if,$(eq,$(upper,$(getenv,EorW)),E),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(-,90,$(getenv,走向)),$(-,270,$(getenv,走向))),$(if,$(eq,$(upper,$(getenv,NorS)),N),$(+,270,$(getenv,走向)),$(+,90,$(getenv,走向))));_zoom;p;_text;@-6725,50;3000;0;$M=$(getenv,走向)$(upper,$(getenv,EorW));_move;l;;@0,0;\_text;@4625,1450;3000;0;$M=$(getenv,傾斜);_move;l;;@0,0;\
+
+★Y1B1
+アイコン説明
+ゆるみ区分(Y3B2)を描画します。
+(縮尺は 1 → 1mmとする)
+
+操作
+・画層選択後
+①Y○～ (数字入力)
+②～B○ (数字入力)
+
+  ゆるみ 描画
+^C^C_setenv;Y;\_setenv;B;\_id;\_text;@0,0;2000;0;Y$M=$(getenv,Y)B$M=$(getenv,B);
+
+★写真番号
+アイコン説明
+写真場号を描画します。
+(番号の背景は映らないようになります)
+
+操作
+・画層選択後
+①位置(クリック)
+②サイズ(入力)
+③番号(入力)
+④矢印方向(クリック)
+
+  写真番号
+◆使用制限：描画される時に、ZoomIn・ZoomOutにより正確に描画されない時がある◆
+*^C^C_id;\_setenv;文字の大きさ;\_setenv;番号;\_polygon;50;@0,0;i;$M=$(*,$(getenv,文字の大きさ),1);_wipeout;p;l;y;_draworder;l;;f;_change;l;;p;lw;0;;_circle;@0,0;$M=$(*,$(getenv,文字の大きさ),1);_text;j;mc;@0,0;$M=$(getenv,文字の大きさ);0;$M=$(getenv,番号);_pline;@$M=$(*,$(getenv,文字の大きさ),1),0;@$M=$(*,$(getenv,文字の大きさ),1.2),0;@-$M=$(*,$(getenv,文字の大きさ),0.42),$M=$(*,$(getenv,文字の大きさ),0.42);@$M=$(*,$(getenv,文字の大きさ),0.42),-$M=$(*,$(getenv,文字の大きさ),0.42);@-$M=$(*,$(getenv,文字の大きさ),0.42),-$M=$(*,$(getenv,文字の大きさ),0.42);^C_rotate;l;;$M=$(getvar,lastpoint);\

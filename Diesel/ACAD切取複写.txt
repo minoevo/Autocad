@@ -1,0 +1,8 @@
+範囲囲む：rectang
+対象をブロック化：
+範囲を示す：clip
+書出し：wmfout
+読込：wmfin
+スケール合わす：scale
+分解：explode
+境界を削除：clip

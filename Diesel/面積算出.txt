@@ -1,0 +1,5 @@
+^C^C_MEASUREGEOM;ar;o;\^C^C_setenv;文字の大きさ;\_text;\$M=$(getenv,文字の大きさ);0;$M=$(rtos,$(/,$(getvar,area),1000000),2,6)m2;
+
+^C^C_MEASUREGEOM;ar;o;\^C^C_setenv;文字の大きさ;\_text;\$M=$(getenv,文字の大きさ);0;$M=$(rtos,$(/,$(getvar,area),100),2,2)cm2;
+
+^C^C_MEASUREGEOM;ar;o;\^C^C_setenv;文字の大きさ;\_text;\$M=$(getenv,文字の大きさ);0;$(rtos,$(getvar,area),2,0)mm2;

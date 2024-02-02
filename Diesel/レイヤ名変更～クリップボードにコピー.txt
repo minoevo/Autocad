@@ -1,0 +1,1 @@
+^C^C_setenv;図番;\-layer;r;30;1ME$M=$(getenv,図番)_計曲線;r;31;1ME$M=$(getenv,図番)_主曲線;;_ai_selall;_copyclip;^C

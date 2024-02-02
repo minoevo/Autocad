@@ -1,0 +1,1 @@
+^C^C_select;$m=$(if,$(getvar,cmdactive),\,)_QAFLAGS;6;_logfileon;_list;_p;\_logfileoff;_QAFLAGS;0;
