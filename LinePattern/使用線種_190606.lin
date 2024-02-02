@@ -1,0 +1,44 @@
+*WEATHER-1 ―∩―∩―∩―
+A,3,["k",GDT,x=0,s=1],2
+*WEATHER-2 ―∪―∪―∪―
+A,3,["k",GDT,x=2,s=1,r=180],2
+*WEATHER-3 --∩--∩--∩--
+A,2,["k",GDT,x=-1.5,s=1],1.2,-1
+*WEATHER-4 --∪--∪--∪--
+A,2,["k",GDT,x=1,s=1,r=180],2,-1
+*Ysankaku-1 ―∧―∧―∧―
+A,3,["w",GDT,x=2,y=1,s=-1],2
+*Ysankaku-2 ―∨―∨―∨―
+A,3,["w",GDT,x=-0,y=-1,s=-1,r=180],2
+*Ysankaku-3 --∧--∧--∧--
+A,2,["w",GDT,x=1,y=1,s=-1],2,-1
+*Ysankaku-4 --∨--∨--∨--
+A,2,["w",GDT,x=-1,y=-1,s=-1,r=180],2,-1
+*Zvert1 ―⊥―⊥―⊥―
+A,4.7625,[TRACK1,ltypeshp.shx,y=1,s=1],4.7625
+*Zvert2 ―Ｔ―Ｔ―Ｔ―
+A,4.7625,[TRACK1,ltypeshp.shx,y=-1,s=-1],4.7625
+*Zvert3 --⊥--⊥--⊥--
+A,3.175,[TRACK1,ltypeshp.shx,y=1,s=1],3.175,-3.175
+*Zvert4 --Ｔ--Ｔ--Ｔ--
+A,3.175,[TRACK1,ltypeshp.shx,y=-1,s=-1],3.175,-3.175
+*Zvert5 ―＋―＋―＋―
+A,4.7625,[TRACK1,ltypeshp.shx,s=2],4.7625
+*Zvert6 --＋--＋--＋--
+A,3.175,[TRACK1,ltypeshp.shx,s=2],3.175,-3.175
+*WEATHER-5 Ｕ∩Ｕ∩Ｕ∩Ｕ
+A,0,-2,["k",GDT,x=-1,s=1],0,-2,["k",GDT,x=1.2,s=-1,r=360]
+*WEATHER-6 ＵＵＵＵＵＵＵ
+A,0,-2,["k",GDT,x=-1,s=1]
+*Zvert11 ⊥―⊥―⊥―⊥
+A,5,[TRACK1,ltypeshp.shx,x=4.7625,y=1,s=1],0
+*Zvert12 Ｔ―Ｔ―Ｔ―Ｔ
+A,5,[TRACK1,ltypeshp.shx,x=4.7625,y=-1,s=-1],0
+*Tvert1 ⊥―⊥―⊥―⊥
+A,5,[TRACK1,ltypeshp.shx,x=2.5,y=1,s=1],0
+*Tvert2 Ｔ―Ｔ―Ｔ―Ｔ
+A,5,[TRACK1,ltypeshp.shx,x=2.5,y=-1,s=-1],0
+*Zvert99 ------------
+A,3.175,-3.175,3.175,-3.175
+*Yajirusi ―＞―＞―＞―
+A,5,["u",GDT,x=0,y=0.4,s=-1,r=45],0,["u",GDT,x=0.7,y=0.3,s=-1,r=-45],0.5
