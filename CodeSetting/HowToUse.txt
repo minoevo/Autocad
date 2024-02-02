@@ -1,3 +1,4 @@
+【setenv・getenv使用設定】
 Autocad立ち上げてから、
 コマンドに【appload】(又は、ツールタブ→AutoLISP(I)→アプリケーションロード(L))
 スタートアップ登録をする。（.lspデータの移動はしない）
